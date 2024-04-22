@@ -20,17 +20,20 @@ namespace E4IT.GestBanque
                 Titulaire = johnDoe
             };
 
-            courant.Depot(-500);
-            Console.WriteLine($"Solde du compte '0001' : {courant.Solde}");
-            courant.Depot(500);
-            Console.WriteLine($"Solde du compte '0001' : {courant.Solde}");
-            courant.Retrait(-100);
-            Console.WriteLine($"Solde du compte '0001' : {courant.Solde}");
-            courant.Retrait(100);
-            Console.WriteLine($"Solde du compte '0001' : {courant.Solde}");
-            courant.Retrait(1000);
-            Console.WriteLine($"Solde du compte '0001' : {courant.Solde}");
+            Banque banque = new Banque() { Nom = "Techno Banking" };
+            banque.Ajouter(courant);
 
+            banque["0001"].Depot(-500);
+            Console.WriteLine($"Solde du compte '0001' : {banque["0001"].Solde}");
+            banque["0001"].Depot(500);
+            Console.WriteLine($"Solde du compte '0001' : {banque["0001"].Solde}");
+            banque["0001"].Retrait(-100);
+            Console.WriteLine($"Solde du compte '0001' : {banque["0001"].Solde}");
+            banque["0001"].Retrait(100);
+            Console.WriteLine($"Solde du compte '0001' : {banque["0001"].Solde}");
+            banque["0001"].Retrait(1000);
+            Console.WriteLine($"Solde du compte '0001' : {banque["0001"].Solde}");
+            
         }
     }
 }
