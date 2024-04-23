@@ -2,8 +2,6 @@
 {
     public class Courant : Compte
     {
-        
-
         private double _ligneDeCredit;
 
         public double LigneDeCredit
@@ -26,6 +24,11 @@
         public override void Retrait(double montant)
         {
             Retrait(montant, LigneDeCredit);
+        }
+
+        protected override double CalculInteret()
+        {
+            return Solde * (Solde < 0 ? .0975 : .03);
         }
     }
 }

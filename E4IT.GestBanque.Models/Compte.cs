@@ -1,6 +1,6 @@
 ﻿namespace E4IT.GestBanque.Models
 {
-    public class Compte
+    public abstract class Compte
     {
         public static double operator +(double d, Compte courant)
         {
@@ -81,6 +81,13 @@
             }
 
             Solde -= montant;
+        }
+
+        protected abstract double CalculInteret();
+
+        public void AppliquerInteret()
+        {
+            Solde += CalculInteret();
         }
     }
 }
