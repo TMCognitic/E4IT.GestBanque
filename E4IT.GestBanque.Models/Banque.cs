@@ -8,11 +8,11 @@ namespace E4IT.GestBanque.Models
 {
     public class Banque
     {
-        private Dictionary<string, Courant> _comptes = new Dictionary<string, Courant>();
+        private Dictionary<string, Compte> _comptes = new Dictionary<string, Compte>();
 
         public string Nom { get; set; }
 
-        public Courant this[string numero]
+        public Compte this[string numero]
         {
             get
             {
@@ -20,7 +20,7 @@ namespace E4IT.GestBanque.Models
             }
         }
 
-        public void Ajouter(Courant courant)
+        public void Ajouter(Compte courant)
         {
             _comptes.Add(courant.Numero, courant);
         }
@@ -34,14 +34,14 @@ namespace E4IT.GestBanque.Models
         {
             double total = 0D;
 
-            foreach(Courant courant in _comptes.Values) 
+            foreach(Compte courant in _comptes.Values) 
             {
                 if(courant.Titulaire == personne)
                 {
                     total += courant;
 
-                    //total (double) = total (double) + courant (Courant)
-                    //public static double operator+(double d, Courant courant)
+                    //total (double) = total (double) + courant (Compte)
+                    //public static double operator+(double d, Compte courant)
                 }
             }
 
