@@ -31,16 +31,15 @@ namespace E4IT.GestBanque
                 Titulaire = johnDoe
             };
 
-            Courant courant2 = new Courant()
+            Epargne epargne = new Epargne()
             {
                 Numero = "0002",
-                LigneDeCredit = 0,
                 Titulaire = johnDoe
             };
 
             Banque banque = new Banque() { Nom = "Techno Banking" };
             banque.Ajouter(courant);
-            banque.Ajouter(courant2);
+            banque.Ajouter(epargne);
 
             banque["0001"].Depot(-500);
             Console.WriteLine($"Solde du compte '0001' : {banque["0001"].Solde}");
