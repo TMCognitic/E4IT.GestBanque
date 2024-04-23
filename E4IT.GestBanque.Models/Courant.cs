@@ -2,6 +2,11 @@
 {
     public class Courant
     {
+        public static double operator +(double d, Courant courant)
+        {
+            return (d < 0 ? 0 : d) + (courant.Solde < 0 ? 0 : courant.Solde);
+        }
+
         private string _numero;
         private double _solde, _ligneDeCredit;
         private Personne _titulaire;

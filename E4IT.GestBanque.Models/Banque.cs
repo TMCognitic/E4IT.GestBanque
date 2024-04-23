@@ -29,5 +29,23 @@ namespace E4IT.GestBanque.Models
         {
             _comptes.Remove(numero);
         }
+
+        public double AvoirDesCompte(Personne personne)
+        {
+            double total = 0D;
+
+            foreach(Courant courant in _comptes.Values) 
+            {
+                if(courant.Titulaire == personne)
+                {
+                    total += courant;
+
+                    //total (double) = total (double) + courant (Courant)
+                    //public static double operator+(double d, Courant courant)
+                }
+            }
+
+            return total;
+        }
     }
 }
