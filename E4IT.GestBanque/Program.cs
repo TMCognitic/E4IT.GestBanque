@@ -37,6 +37,8 @@ namespace E4IT.GestBanque
                 Titulaire = johnDoe
             };
 
+            courant.LigneDeCredit = 500;
+
             Banque banque = new Banque() { Nom = "Techno Banking" };
             banque.Ajouter(courant);
             banque.Ajouter(epargne);
@@ -55,6 +57,8 @@ namespace E4IT.GestBanque
             Console.WriteLine($"Solde du compte '0001' : {banque["0001"].Solde}");
 
             banque["0002"].Depot(5000);
+            Console.WriteLine($"Solde du compte '0002' : {banque["0002"].Solde}");
+            banque["0002"].Retrait(100);
             Console.WriteLine($"Solde du compte '0002' : {banque["0002"].Solde}");
 
             Console.WriteLine($"Avoir des comptes de Mr {johnDoe.Prenom} {johnDoe.Nom} : {banque.AvoirDesCompte(johnDoe)}");

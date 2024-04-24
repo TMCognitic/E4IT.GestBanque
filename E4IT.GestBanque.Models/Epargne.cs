@@ -4,8 +4,6 @@
     {
         private DateTime _dernierRetrait;
 
-       
-
         public DateTime DernierRetrait
         {
             get

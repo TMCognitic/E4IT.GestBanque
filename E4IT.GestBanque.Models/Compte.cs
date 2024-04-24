@@ -50,6 +50,16 @@
             }
         }
 
+        public virtual double LigneDeCredit
+        {
+            get { return 0; }
+            set 
+            {
+                Console.WriteLine("La ligne de crédit ne peut pas être définie...");
+                return;
+            }
+        }
+
         public void Depot(double montant)
         {
             if (montant <= 0)
@@ -63,18 +73,13 @@
 
         public virtual void Retrait(double montant)
         {
-            Retrait(montant, 0);
-        }
-
-        private protected void Retrait(double montant, double ligneDeCredit)
-        {
             if (montant <= 0)
             {
                 Console.WriteLine("montant invalide");
                 return;
             }
 
-            if (Solde - montant < -ligneDeCredit)
+            if (Solde - montant < -LigneDeCredit)
             {
                 Console.WriteLine("Solde insuffisant");
                 return;
