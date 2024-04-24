@@ -1,6 +1,6 @@
 ﻿namespace E4IT.GestBanque.Models
 {
-    public abstract class Compte
+    public abstract class Compte : ICustomer, IBanker
     {
         public static double operator +(double d, Compte courant)
         {
