@@ -17,27 +17,14 @@ namespace E4IT.GestBanque
             #endregion
 
 
-            Personne johnDoe = new Personne()
-            {
-                Nom = "Doe",
-                Prenom = "John",
-                DateNaiss = new DateTime(1970, 1, 1)
-            };
+            Personne johnDoe = new Personne("Doe", "John", new DateTime(1970, 1, 1));
 
-            Courant courant = new Courant()
-            {
-                Numero = "0001",
-                LigneDeCredit = 500,
-                Titulaire = johnDoe
-            };
+            Courant courant = new Courant("0001", 500, johnDoe);
 
-            Epargne epargne = new Epargne()
-            {
-                Numero = "0002",
-                Titulaire = johnDoe
-            };
+            Epargne epargne = new Epargne("0002", johnDoe);
 
-            Banque banque = new Banque() { Nom = "Techno Banking" };
+            Banque banque = new Banque("Techno Banking");
+
             banque.Ajouter(courant);
             banque.Ajouter(epargne);
 

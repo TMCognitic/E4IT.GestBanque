@@ -8,9 +8,9 @@ namespace E4IT.GestBanque.Models
 {
     public class Banque
     {
-        private Dictionary<string, Compte> _comptes = new Dictionary<string, Compte>();
+        private Dictionary<string, Compte> _comptes;
 
-        public string Nom { get; set; }
+        public string Nom { get; init; }
 
         public Compte this[string numero]
         {
@@ -18,6 +18,12 @@ namespace E4IT.GestBanque.Models
             {
                 return _comptes[numero];
             }
+        }
+
+        public Banque(string nom)
+        {
+            Nom = nom;
+            _comptes = new Dictionary<string, Compte>();
         }
 
         public void Ajouter(Compte courant)
