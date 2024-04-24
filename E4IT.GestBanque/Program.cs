@@ -18,11 +18,8 @@ namespace E4IT.GestBanque
 
 
             Personne johnDoe = new Personne("Doe", "John", new DateTime(1970, 1, 1));
-
             Courant courant = new Courant("0001", 500, johnDoe);
-
             Epargne epargne = new Epargne("0002", johnDoe);
-
             Banque banque = new Banque("Techno Banking");
 
             banque.Ajouter(courant);
