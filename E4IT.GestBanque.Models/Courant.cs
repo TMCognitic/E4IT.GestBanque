@@ -15,7 +15,7 @@
             {
                 //Coder de manière defensive
                 if (value < 0)
-                    return; //à remplacer par une erreur
+                    throw new ArgumentOutOfRangeException(nameof(value), "La ligne de crédit doit être strictement positive");
 
                 _ligneDeCredit = value;
             }

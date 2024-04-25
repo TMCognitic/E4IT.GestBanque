@@ -66,8 +66,7 @@
         {
             if (montant <= 0)
             {
-                Console.WriteLine("montant invalide");
-                return;
+                throw new ArgumentOutOfRangeException(nameof(montant), "le 'montant' doit être supérieur à zéro");
             }
 
             Solde += montant;
@@ -82,14 +81,12 @@
         {
             if (montant <= 0)
             {
-                Console.WriteLine("montant invalide");
-                return;
+                throw new ArgumentOutOfRangeException(nameof(montant), "le 'montant' doit être supérieur à zéro");
             }
 
             if (Solde - montant < -ligneDeCredit)
             {
-                Console.WriteLine("Solde insuffisant");
-                return;
+                throw new SoldeInsuffisantException($"Le solde du compte '{Numero}' est insuffisant");
             }
 
             Solde -= montant;
