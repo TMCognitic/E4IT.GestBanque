@@ -26,13 +26,20 @@ namespace E4IT.GestBanque.Models
             _comptes = new Dictionary<string, Compte>();
         }
 
-        public void Ajouter(Compte courant)
+        public void Ajouter(Compte compte)
         {
-            _comptes.Add(courant.Numero, courant);
-        }
+            compte.PassageEnNegatifEvent += PassageEnNegatifAction;
+            _comptes.Add(compte.Numero, compte);
+        }        
 
         public void Supprimer(string numero)
         {
+            if(!_comptes.ContainsKey(numero))
+            {
+                return;
+            }
+
+            _comptes[numero].PassageEnNegatifEvent -= PassageEnNegatifAction;
             _comptes.Remove(numero);
         }
 
@@ -52,6 +59,11 @@ namespace E4IT.GestBanque.Models
             }
 
             return total;
+        }
+
+        private void PassageEnNegatifAction(Compte compte)
+        {
+            Console.WriteLine($"Le compte '{compte.Numero}' vient de passer en négatif");
         }
     }
 }

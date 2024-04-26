@@ -40,6 +40,7 @@ namespace E4IT.GestBanque
 
             try
             {
+                Console.WriteLine("Tentative de dépot de -500");
                 banque["0001"].Depot(-500);
                 Console.WriteLine($"Solde du compte '0001' : {banque["0001"].Solde}");
             }
@@ -50,6 +51,7 @@ namespace E4IT.GestBanque
 
             try
             {
+                Console.WriteLine("Tentative de dépot de 500");
                 banque["0001"].Depot(500);
                 Console.WriteLine($"Solde du compte '0001' : {banque["0001"].Solde}");
             }
@@ -60,6 +62,7 @@ namespace E4IT.GestBanque
 
             try
             {
+                Console.WriteLine("Tentative de retrait de -100");
                 banque["0001"].Retrait(-100);
                 Console.WriteLine($"Solde du compte '0001' : {banque["0001"].Solde}");
             }
@@ -70,6 +73,7 @@ namespace E4IT.GestBanque
 
             try
             {
+                Console.WriteLine("Tentative de retrait de 100");
                 banque["0001"].Retrait(100);
                 Console.WriteLine($"Solde du compte '0001' : {banque["0001"].Solde}");
             }
@@ -80,6 +84,7 @@ namespace E4IT.GestBanque
 
             try
             {
+                Console.WriteLine("Tentative de retrait de 1000");
                 banque["0001"].Retrait(1000);
                 Console.WriteLine($"Solde du compte '0001' : {banque["0001"].Solde}");
             }
@@ -90,6 +95,7 @@ namespace E4IT.GestBanque
 
             try
             {
+                Console.WriteLine("Tentative de retrait de 500");
                 banque["0001"].Retrait(500);
                 Console.WriteLine($"Solde du compte '0001' : {banque["0001"].Solde}");
             }
@@ -100,6 +106,7 @@ namespace E4IT.GestBanque
 
             try
             {
+                Console.WriteLine("Tentative de dépot de 5000");
                 banque["0002"].Depot(5000);
                 Console.WriteLine($"Solde du compte '0002' : {banque["0002"].Solde}");
             }

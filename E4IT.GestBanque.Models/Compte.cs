@@ -7,6 +7,8 @@
             return (d < 0 ? 0 : d) + (courant.Solde < 0 ? 0 : courant.Solde);
         }
 
+        public event PassageEnNegatifDelegate PassageEnNegatifEvent;
+
         private string _numero;
         private double _solde;
         private Personne _titulaire;
@@ -97,6 +99,11 @@
         public void AppliquerInteret()
         {
             Solde += CalculInteret();
+        }
+
+        protected void RaisePassageEnNegatifEvent()
+        {
+            PassageEnNegatifEvent?.Invoke(this);
         }
     }
 }
